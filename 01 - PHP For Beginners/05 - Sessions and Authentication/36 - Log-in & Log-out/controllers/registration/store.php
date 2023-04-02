@@ -44,7 +44,9 @@ if ($user) {
     ]);
 
     // mark that the user has logged in.
-    login($user);
+    login([
+        'email' => $email
+    ]);
 
     // after confirming logged-in redirect to homepage.
     header('location: /');
