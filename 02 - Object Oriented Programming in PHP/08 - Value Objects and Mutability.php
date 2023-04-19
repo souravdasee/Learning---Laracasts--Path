@@ -1,5 +1,9 @@
 <?php
 
+// Avoids primitive obsession - and readability
+// Helps with consistency
+// Immutable
+
 class Age
 {
     private $age;
@@ -7,7 +11,7 @@ class Age
     public function __construct($age)
     {
         if ($age < 0 || $age > 120) {
-            throw new \http\Exception\InvalidArgumentException('That makes no sense');
+            throw new InvalidArgumentException('That makes no sense');
         }
 
         $this->age = $age;
@@ -15,7 +19,7 @@ class Age
 
     public function increment()
     {
-        $this->age += 1;
+        return new self($this->age + 1);
     }
 
     public function get()
@@ -25,8 +29,8 @@ class Age
 }
 
 $age = new Age(35);
-$age->increment();
-var_dump($age->get());
+$newAge = $age->increment();
+var_dump($newAge->get());
 
 //function register(string $name, Age $age)
 //{
