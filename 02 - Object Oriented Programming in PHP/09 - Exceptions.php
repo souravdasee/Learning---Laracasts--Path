@@ -1,5 +1,13 @@
 <?php
 
+class TeamException extends Exception
+{
+    public static function fromTooManyMembers()
+    {
+        return new static('You can not add more than 3 team members.');
+    }
+}
+
 class Member
 {
     public $name;
@@ -17,7 +25,7 @@ class Team
     public function add(Member $member)
     {
         if (count($this->members) === 3) {
-            throw new Exception('You can not add more than 3 team members.');
+            throw TeamException::fromTooManyMembers();
         }
         $this->members[] = $member;
     }
@@ -42,8 +50,10 @@ class TeamMembersController
             $team->add(new Member('Kale Doe'));
 
             var_dump($team->members());
-        } catch (Exception $e) {
+        } catch (TeamException $e) {
             var_dump($e);
+        } catch (Exception $exception) {
+            var_dump($exception);
         }
     }
 }
