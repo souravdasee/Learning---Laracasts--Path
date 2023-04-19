@@ -2,7 +2,7 @@
 
 class Age
 {
-    public $age;
+    private $age;
 
     public function __construct($age)
     {
@@ -12,15 +12,27 @@ class Age
 
         $this->age = $age;
     }
-}
 
-function register(string $name, Age $age)
-{
+    public function increment()
+    {
+        $this->age += 1;
+    }
 
+    public function get()
+    {
+        return $this->age;
+    }
 }
 
 $age = new Age(35);
+$age->increment();
+var_dump($age->get());
 
-$age->age = 500;
-
-register('John Doe', $age);
+//function register(string $name, Age $age)
+//{
+//
+//}
+//
+//$age = new Age(35);
+//
+//register('John Doe', $age);
