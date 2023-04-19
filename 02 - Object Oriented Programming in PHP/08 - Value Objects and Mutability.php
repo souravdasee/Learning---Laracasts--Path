@@ -19,4 +19,8 @@ function register(string $name, Age $age)
 
 }
 
-register('John Doe', new Age(35));
+$age = new Age(35);
+
+$age->age = 500;
+
+register('John Doe', $age);
