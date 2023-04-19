@@ -1,23 +1,51 @@
 <?php
 
-class Video
+class Member
 {
+    public $name;
 
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
 }
 
-class User
+class Team
 {
-    public function download(Video $video)
+    protected $members = [];
+
+    public function add(Member $member)
     {
-        if (! $this->subscribed()) {
-            throw new Exception('You must be subscribed to download videos.');
+        if (count($this->members) === 3) {
+            throw new Exception('You can not add more than 3 team members.');
+        }
+        $this->members[] = $member;
+    }
+
+    public function members()
+    {
+        return $this->members;
+    }
+}
+
+
+class TeamMembersController
+{
+    public function store()
+    {
+        $team = new Team; // has a maximum of three members.
+
+        try {
+            $team->add(new Member('John Doe'));
+            $team->add(new Member('Jane Doe'));
+            $team->add(new Member('Max Doe'));
+            $team->add(new Member('Kale Doe'));
+
+            var_dump($team->members());
+        } catch (Exception $e) {
+            var_dump($e);
         }
     }
-
-    public function subscribed()
-    {
-        return false;
-    }
 }
 
-(new User)->download(new Video);
+(new TeamMembersController())->store();
