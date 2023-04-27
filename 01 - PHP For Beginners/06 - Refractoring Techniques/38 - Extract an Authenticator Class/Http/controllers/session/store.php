@@ -1,6 +1,7 @@
 <?php
 
-use Core\Validator;
+use Core\Authenticator;
+use Core\Session;
 use \Http\Forms\LoginForm;
 
 
