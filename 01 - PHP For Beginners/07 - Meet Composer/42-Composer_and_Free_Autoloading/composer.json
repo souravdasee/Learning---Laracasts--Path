@@ -1,0 +1,16 @@
+{
+    "name": "soura/42-composer_and_free_autoloading",
+    "authors": [
+        {
+            "name": "Sourav Das",
+            "email": "developer.souravdas.ee@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
