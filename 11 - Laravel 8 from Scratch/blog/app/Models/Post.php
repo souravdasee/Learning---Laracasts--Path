@@ -14,7 +14,7 @@ class Post extends Model
     // protected $fillable = ['title', 'excerpt', 'body'];
 
     protected $with = ['category', 'author'];
-    
+
     public function scopeFilter($query, array $filters) //Post::newQuery()->filter()
     {
         $query->when($filters['search'] ?? false, fn($query, $search) =>
@@ -33,6 +33,11 @@ class Post extends Model
             $query->whereHas('author', fn ($query) =>
                 $query->where('username', $author)
             ));
+    }
+
+    public function comments() // author_id
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function category ()
