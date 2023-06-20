@@ -21,7 +21,7 @@
                         </option>
                     @endforeach
                 </select>
-
+                
                 <x-form.error name="category" />
             </x-form.field>
 
