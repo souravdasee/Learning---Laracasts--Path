@@ -11,7 +11,7 @@
                     <x-form.input name="email" type="email" autocomplete="username" />
                     <x-form.input name="password" type="password" autocomplete="new-password" />
 
-                    <x-form.button>Submit</x-form.button>
+                    <x-form.button>Sign Up</x-form.button>
                 </form>
             </x-panel>
         </main>
