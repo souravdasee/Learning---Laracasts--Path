@@ -49,8 +49,15 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function experience()
+    public function posts()
     {
-        return $this->hasOne(Experience::class);
+        return $this->hasMany(Post::class);
     }
 }
+
+
+// a user can have many posts
+// a post can have many comments
+// a project can have many tasks
+// a user can have many jobs
+// a user can have many achievements
