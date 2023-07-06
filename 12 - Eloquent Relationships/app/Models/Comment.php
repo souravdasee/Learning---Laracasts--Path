@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\User;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Profile extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function post()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Post::class);
     }
 }

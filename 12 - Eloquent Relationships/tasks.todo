@@ -4,7 +4,7 @@ Relationships:
 
 ✔ one to Many @started(23-07-07 00:38) @done(23-07-07 02:19) @lasted(1h41m23s)
 
-☐ Many to Many
+✔ Many to Many @started(23-07-07 02:21) @done(23-07-07 03:09) @lasted(48m24s)
 
 ☐ Has many through
 
