@@ -6,6 +6,6 @@ Relationships:
 
 ✔ Many to Many @started(23-07-07 02:21) @done(23-07-07 03:09) @lasted(48m24s)
 
-☐ Has many through
+☐ Has many through @started(23-07-07 18:20)
 
 ☐ Polymorphic relations
