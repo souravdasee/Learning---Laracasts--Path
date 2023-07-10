@@ -6,6 +6,8 @@ Relationships:
 
 ✔ Many to Many @started(23-07-07 02:21) @done(23-07-07 03:09) @lasted(48m24s)
 
-☐ Has many through @started(23-07-07 18:20)
+✔ Has many through @started(23-07-07 18:20) @done(23-07-07 19:00) @lasted(40m37s)
 
-☐ Polymorphic relations
+✔ Polymorphic relations @started(23-07-10 15:46) @done(23-07-10 16:19) @lasted(33m42s)
+
+☐ Many-to-Many polymorphic relations
